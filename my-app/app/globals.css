@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 100% 98%;
+    --foreground: 20 10% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 10% 20%;
+
+    --primary: 30 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 80% 90%;
+    --secondary-foreground: 20 10% 20%;
+
+    --muted: 30 30% 96%;
+    --muted-foreground: 20 10% 40%;
+
+    --accent: 25 90% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 70% 90%;
+    --input: 30 70% 90%;
+    --ring: 30 80% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 50% 10%;
+    --foreground: 30 10% 90%;
+
+    --card: 20 50% 15%;
+    --card-foreground: 30 10% 90%;
+
+    --popover: 20 50% 15%;
+    --popover-foreground: 30 10% 90%;
+
+    --primary: 30 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 30% 25%;
+    --secondary-foreground: 30 10% 90%;
+
+    --muted: 20 40% 20%;
+    --muted-foreground: 30 10% 70%;
+
+    --accent: 25 90% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 50% 25%;
+    --input: 20 50% 25%;
+    --ring: 30 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tight;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Button hover effects */
+@keyframes pulse-light {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.btn-pulse:hover {
+  animation: pulse-light 2s ease-in-out infinite;
+}
+
+/* Gradient animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
